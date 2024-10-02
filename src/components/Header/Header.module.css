@@ -7,3 +7,20 @@
   height: 80px;
   padding: 10px 10px;
 }
+
+.header_nav {
+  display: flex;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+li {
+  cursor: pointer;
+  padding-left: 30px;
+}
+
+li:first-child {
+  padding-left: 0px;
+}

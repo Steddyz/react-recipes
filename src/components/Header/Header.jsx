@@ -11,7 +11,13 @@ const Header = () => {
         </div>
       </div>
 
-      <div className={cl.header_right}>Header</div>
+      <div className={cl.header_right}>
+        <ul className={cl.header_nav}>
+          <li>Главная</li>
+          <li>Рецепты</li>
+          <li>Страны</li>
+        </ul>
+      </div>
     </div>
   );
 };

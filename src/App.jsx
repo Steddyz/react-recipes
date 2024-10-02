@@ -12,8 +12,8 @@ function App() {
   return (
     <>
       <Header />
-      {/* <RandomRecipe />
-      <IngredientsForm />
+      <RandomRecipe />
+      {/* <IngredientsForm />
       <Footer /> */}
     </>
   );

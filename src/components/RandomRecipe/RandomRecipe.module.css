@@ -1,0 +1,10 @@
+.random {
+  display: flex;
+  align-items: center;
+  height: 80vh;
+  justify-content: center;
+
+  margin: 40px 0 40px 0;
+
+  border: 1px solid #000;
+}
