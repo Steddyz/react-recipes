@@ -16,11 +16,11 @@
   cursor: pointer;
 }
 
-li {
-  cursor: pointer;
+.header__item {
   padding-left: 30px;
+  color: #000;
 }
 
-li:first-child {
+.header__item:first-child {
   padding-left: 0px;
 }

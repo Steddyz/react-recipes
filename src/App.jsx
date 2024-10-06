@@ -1,15 +1,21 @@
 import "./App.css";
 import Header from "./components/Header/Header";
-import RandomRecipe from "./components/RandomRecipe/RandomRecipe";
 import Footer from "./components/Footer/Footer";
-import IngredientsForm from "./components/IngredientsForm/IngredientsForm";
+import { Route, Routes } from "react-router-dom";
+import MainPage from "./pages/MainPage/MainPage";
+import RecipesPage from "./pages/RecipesPage/RecipesPage";
+import CountriePage from "./pages/CountriePage/CountriePage";
 
 function App() {
   return (
     <>
       <Header />
-      <RandomRecipe />
-      <IngredientsForm />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/recipes" element={<RecipesPage />} />
+        <Route path="/countries" element={<CountriePage />} />
+        <Route path="*" element={<MainPage />} />
+      </Routes>
       <Footer />
     </>
   );
