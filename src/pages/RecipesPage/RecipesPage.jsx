@@ -1,7 +1,12 @@
 import React from "react";
+import SearchForm from "../../components/SearchForm/SearchForm";
 
 const RecipesPage = () => {
-  return <div>RecipesPage</div>;
+  return (
+    <>
+      <SearchForm />
+    </>
+  );
 };
 
 export default RecipesPage;
