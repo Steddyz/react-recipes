@@ -23,16 +23,20 @@ const RecipeCard = () => {
       {loading ? (
         <div>Загрузка...</div>
       ) : (
-        <div>
+        <div className={cl.wrapper_recipe}>
           {recipes.map((recipe) => (
-            <div key={recipe.idMeal}>
-              <p>{recipe.strMeal}</p>
+            <div className={cl.recipe_inner} key={recipe.idMeal}>
               <img
                 className={cl.image}
                 src={recipe.strMealThumb}
                 alt={recipe.strMeal}
               />
-              <p>{recipe.strInstructions}</p>
+              <div className={cl.recipe_options}>
+                <p>{recipe.strMeal}</p>
+                <p>{recipe.strArea}</p>
+              </div>
+
+              {/* <p>{recipe.strInstructions}</p> */}
             </div>
           ))}
         </div>
