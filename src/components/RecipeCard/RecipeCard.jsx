@@ -21,7 +21,7 @@ const RecipeCard = () => {
   return (
     <>
       {loading ? (
-        <div>Загрузка...</div>
+        <div className={cl.loading}>Загрузка...</div>
       ) : (
         <div className={cl.wrapper_recipe}>
           {recipes.map((recipe) => (

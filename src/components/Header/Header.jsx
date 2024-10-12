@@ -22,6 +22,9 @@ const Header = () => {
           <Link to="/recipes" className={cl.header__item}>
             Рецепты
           </Link>
+          <Link to="/categories" className={cl.header__item}>
+            Категории
+          </Link>
           <Link to="/countries" className={cl.header__item}>
             Страны
           </Link>
