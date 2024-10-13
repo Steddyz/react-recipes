@@ -13,8 +13,6 @@ const CategoriesPage = () => {
       const response = await axios.get(
         "https://www.themealdb.com/api/json/v1/1/categories.php"
       );
-      console.log(response.data.categories);
-
       setCategories(response.data.categories);
       setLoading(false);
     };

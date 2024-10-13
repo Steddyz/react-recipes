@@ -11,7 +11,6 @@ const RandomRecipe = () => {
       const responce = await axios.get(
         "https://www.themealdb.com/api/json/v1/1/random.php"
       );
-      console.log(responce.data.meals[0]);
       setRecipe(responce.data.meals[0]);
     };
     getRandomRecipe();
