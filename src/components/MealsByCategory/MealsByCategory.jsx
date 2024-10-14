@@ -24,7 +24,7 @@ const MealsByCategory = () => {
     <>
       <h2 className={cl.title}>Блюда категории {categoryName}</h2>
       {loading ? (
-        <div>Loading...</div>
+        <div className={cl.loading}>Loading...</div>
       ) : (
         <div className={cl.wrapper_meal}>
           {meals.map((meal) => (
