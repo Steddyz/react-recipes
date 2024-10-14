@@ -2,10 +2,17 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 import cl from "./CategoriesPage.module.css";
+import { useNavigate } from "react-router-dom";
 
 const CategoriesPage = () => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (categoryName) => {
+    navigate(`/category/${categoryName}`);
+  };
 
   useEffect(() => {
     const allCategories = async () => {
@@ -26,7 +33,11 @@ const CategoriesPage = () => {
       ) : (
         <div className={cl.category}>
           {categories.map((category) => (
-            <div className={cl.category_wrapper} key={category.idCategory}>
+            <div
+              className={cl.category_wrapper}
+              onClick={() => handleCategoryClick(category.strCategory)}
+              key={category.idCategory}
+            >
               <img
                 className={cl.category_image}
                 src={category.strCategoryThumb}

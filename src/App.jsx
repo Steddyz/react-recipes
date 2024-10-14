@@ -6,16 +6,19 @@ import MainPage from "./pages/MainPage/MainPage";
 import RecipesPage from "./pages/RecipesPage/RecipesPage";
 import CountriePage from "./pages/CountriePage/CountriePage";
 import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
+import MealsByCategory from "./components/MealsByCategory/MealsByCategory";
 
 function App() {
   return (
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route exact path="/" element={<MainPage />} />
         <Route path="/recipes" element={<RecipesPage />} />
         <Route path="/categories" element={<CategoriesPage />} />
+        <Route path="/category/:categoryName" element={<MealsByCategory />} />
         <Route path="/countries" element={<CountriePage />} />
+
         <Route path="*" element={<MainPage />} />
       </Routes>
       <Footer />
