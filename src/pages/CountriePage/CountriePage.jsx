@@ -32,6 +32,7 @@ import Vietnamese from "../../assets/flags/Vietnamese.png";
 import Unknown from "../../assets/flags/Unknown.png";
 
 import cl from "./CountriePage.module.css";
+import { useNavigate } from "react-router-dom";
 
 const CountriePage = () => {
   const [countries, setCountries] = useState([]);
@@ -68,6 +69,12 @@ const CountriePage = () => {
     Vietnamese: Vietnamese,
   };
 
+  const navigator = useNavigate();
+
+  const handleCountrieClick = (countrieName) => {
+    navigator(`/countries/${countrieName}`);
+  };
+
   useEffect(() => {
     const allCountries = async () => {
       setLoading(true);
@@ -87,7 +94,11 @@ const CountriePage = () => {
       ) : (
         <div className={cl.countrie}>
           {countries.map((countrie, index) => (
-            <div key={index} className={cl.countrie_wrapper}>
+            <div
+              key={index}
+              className={cl.countrie_wrapper}
+              onClick={() => handleCountrieClick(countrie.strArea)}
+            >
               <img
                 src={flagMap[countrie.strArea] || Unknown}
                 alt={countrie.strArea}

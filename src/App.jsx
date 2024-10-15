@@ -7,6 +7,7 @@ import RecipesPage from "./pages/RecipesPage/RecipesPage";
 import CountriePage from "./pages/CountriePage/CountriePage";
 import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
 import MealsByCategory from "./components/MealsByCategory/MealsByCategory";
+import MealsByCountry from "./components/MealsByCountry/MealsByCountry";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/category/:categoryName" element={<MealsByCategory />} />
         <Route path="/countries" element={<CountriePage />} />
-
+        <Route path="/countries/:countrieName" element={<MealsByCountry />} />
         <Route path="*" element={<MainPage />} />
       </Routes>
       <Footer />
