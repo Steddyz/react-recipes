@@ -12,12 +12,12 @@ const MealsByCountry = () => {
   useEffect(() => {
     const mealsByCountrie = async () => {
       const response = await axios.get(
-        `www.themealdb.com/api/json/v1/1/filter.php?a=${countrieName}`
+        `https://www.themealdb.com/api/json/v1/1/filter.php?a=${countrieName}`
       );
       setLoading(false);
       setMeals(response.data.meals);
     };
-    mealsByCountrie;
+    mealsByCountrie();
   }, [countrieName]);
 
   return (
