@@ -22,14 +22,18 @@ const MealsByCountry = () => {
 
   return (
     <>
-      <h2>Блюда из {countrieName}</h2>
+      <h2 className={cl.title}>Блюда из {countrieName}</h2>
       {loading ? (
-        <div>Loading...</div>
+        <div className={cl.loading}>Loading...</div>
       ) : (
-        <div>
+        <div className={cl.wrapper_countrie}>
           {meals.map((meal) => (
-            <div key={meal.idMeal}>
-              <img src={meal.strMealThumb} alt={meal.strMeal} />
+            <div className={cl.countrie_inner} key={meal.idMeal}>
+              <img
+                className={cl.image}
+                src={meal.strMealThumb}
+                alt={meal.strMeal}
+              />
               <p className={cl.description}>{meal.strMeal}</p>
             </div>
           ))}

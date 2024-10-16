@@ -19,6 +19,8 @@
   margin: 30px;
   height: 400px;
   width: 350px;
+
+  cursor: pointer;
 }
 
 .image {
