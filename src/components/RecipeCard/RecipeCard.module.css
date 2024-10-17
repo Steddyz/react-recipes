@@ -17,6 +17,8 @@
   margin: 30px;
   height: 450px;
   width: 350px;
+
+  cursor: pointer;
 }
 
 .image {

@@ -3,13 +3,15 @@ import React from "react";
 import cl from "./Header.module.css";
 import { Link } from "react-router-dom";
 
+import LOGO from "../../assets/logo.png";
+
 const Header = () => {
   return (
     <div className={cl.header}>
       <div className={cl.header_left}>
         <div className={cl.logo}>
           <Link to="/">
-            <img src="" alt="logo" />
+            <img src={LOGO} alt="logo" />
           </Link>
         </div>
       </div>

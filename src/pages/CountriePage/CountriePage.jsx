@@ -89,6 +89,7 @@ const CountriePage = () => {
 
   return (
     <>
+      <h1 className={cl.title}>Национальные блюда</h1>
       {loading ? (
         <div className={cl.loading}>Загрузка...</div>
       ) : (
