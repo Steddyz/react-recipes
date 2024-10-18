@@ -9,8 +9,6 @@ const RecipePage = () => {
     return <div>Загрузка...</div>;
   }
 
-  console.log(recipe);
-
   return (
     <div>
       <img src={recipe.strMealThumb} alt={recipe.strMeal} />
