@@ -8,11 +8,20 @@ const MealsByCategory = () => {
   const { categoryName } = useParams();
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedMeal, setSelectedMeal] = useState(null);
 
   const navigate = useNavigate();
 
-  const handleRecipeClick = (meal) => {
-    navigate(`/recipes/${meal.idMeal}`, { state: meal });
+  const handleRecipeClick = async (meal) => {
+    try {
+      const response = await axios.get(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${meal.strMeal}`
+      );
+      setSelectedMeal(response.data.meals[0]);
+      navigate(`/recipes/${meal.idMeal}`, { state: response.data.meals[0] });
+    } catch (error) {
+      console.error("Error fetching meal details:", error);
+    }
   };
 
   useEffect(() => {
