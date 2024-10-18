@@ -2,10 +2,17 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 import cl from "./RecipeCard.module.css";
+import { useNavigate } from "react-router-dom";
 
 const RecipeCard = () => {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const navigate = useNavigate();
+
+  const handleRecipeClick = (recipe) => {
+    navigate(`/recipes/${recipe.idMeal}`, { state: recipe });
+  };
 
   useEffect(() => {
     const allRecipes = async () => {
@@ -25,7 +32,11 @@ const RecipeCard = () => {
       ) : (
         <div className={cl.wrapper_recipe}>
           {recipes.map((recipe) => (
-            <div className={cl.recipe_inner} key={recipe.idMeal}>
+            <div
+              onClick={() => handleRecipeClick(recipe)}
+              className={cl.recipe_inner}
+              key={recipe.idMeal}
+            >
               <img
                 className={cl.image}
                 src={recipe.strMealThumb}
