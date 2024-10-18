@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import cl from "./MealsByCategory.module.css";
 
@@ -8,6 +8,12 @@ const MealsByCategory = () => {
   const { categoryName } = useParams();
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const navigate = useNavigate();
+
+  const handleRecipeClick = (meal) => {
+    navigate(`/recipes/${meal.idMeal}`, { state: meal });
+  };
 
   useEffect(() => {
     const mealsByCategory = async () => {
@@ -28,7 +34,11 @@ const MealsByCategory = () => {
       ) : (
         <div className={cl.wrapper_meal}>
           {meals.map((meal) => (
-            <div key={meal.idMeal} className={cl.meal_inner}>
+            <div
+              key={meal.idMeal}
+              onClick={() => handleRecipeClick(meal)}
+              className={cl.meal_inner}
+            >
               <img
                 className={cl.image}
                 src={meal.strMealThumb}
