@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import cl from "./MealsByCountry.module.css";
 
@@ -8,6 +8,21 @@ const MealsByCountry = () => {
   const { countrieName } = useParams();
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedMeal, setSelectedMeal] = useState(null);
+
+  const navigate = useNavigate();
+
+  const handleRecipeClick = async (meal) => {
+    try {
+      const response = await axios.get(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${meal.strMeal}`
+      );
+      setSelectedMeal(response.data.meals[0]);
+      navigate(`/recipes/${meal.idMeal}`, { state: response.data.meals[0] });
+    } catch (eroor) {
+      console.error("Error fetching meal details:", error);
+    }
+  };
 
   useEffect(() => {
     const mealsByCountrie = async () => {
@@ -28,7 +43,11 @@ const MealsByCountry = () => {
       ) : (
         <div className={cl.wrapper_countrie}>
           {meals.map((meal) => (
-            <div className={cl.countrie_inner} key={meal.idMeal}>
+            <div
+              onClick={() => handleRecipeClick(meal)}
+              className={cl.countrie_inner}
+              key={meal.idMeal}
+            >
               <img
                 className={cl.image}
                 src={meal.strMealThumb}
