@@ -18,7 +18,7 @@
 .header_left,
 .header_right {
   display: flex;
-  max-width: 1800px;
+  justify-content: center;
   margin: 0 auto;
 }
 
