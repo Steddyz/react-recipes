@@ -14,16 +14,19 @@ function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route exact path="/" element={<MainPage />} />
-        <Route path="/recipes" element={<RecipesPage />} />
-        <Route path="/recipes/:recipeId" element={<RecipePage />} />
-        <Route path="/categories" element={<CategoriesPage />} />
-        <Route path="/category/:categoryName" element={<MealsByCategory />} />
-        <Route path="/countries" element={<CountriePage />} />
-        <Route path="/countries/:countrieName" element={<MealsByCountry />} />
-        <Route path="*" element={<MainPage />} />
-      </Routes>
+      <div className="container">
+        <Routes>
+          <Route exact path="/" element={<MainPage />} />
+          <Route path="/recipes" element={<RecipesPage />} />
+          <Route path="/recipes/:recipeId" element={<RecipePage />} />
+          <Route path="/categories" element={<CategoriesPage />} />
+          <Route path="/category/:categoryName" element={<MealsByCategory />} />
+          <Route path="/countries" element={<CountriePage />} />
+          <Route path="/countries/:countrieName" element={<MealsByCountry />} />
+          <Route path="*" element={<MainPage />} />
+        </Routes>
+      </div>
+
       <Footer />
     </>
   );

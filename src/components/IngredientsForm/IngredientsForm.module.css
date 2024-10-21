@@ -21,9 +21,10 @@
 hr {
   border: 2px solid #000;
   margin: 0 auto;
-  width: 400px;
+  width: 800px;
   background-color: #000;
   margin-bottom: 80px;
+  margin-top: 50px;
 }
 
 .ingredients_title:before {

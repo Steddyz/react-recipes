@@ -1,11 +1,15 @@
 #root {
-  max-width: 1500px;
-  margin: 0 auto;
-  text-align: center;
-
   font-family: "Maven Pro", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 15px;
+  text-align: center;
 }
 
 * {

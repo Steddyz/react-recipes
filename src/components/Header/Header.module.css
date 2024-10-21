@@ -1,23 +1,49 @@
+/* 1. Красный: #C02424
+2. Бежевый: #F5F5DC
+3. Оранжевый: #FFA500
+4. Коричневый: #8B4513
+5. Белый: #FFFFFF */
+
 .header {
   display: flex;
+
+  margin: 0 auto;
   align-items: center;
   justify-content: space-between;
-
-  background-color: #ccc;
+  background-color: #f5f5dc;
   height: 80px;
-  padding: 10px 10px;
+  width: 100%;
+}
+
+.header_left,
+.header_right {
+  display: flex;
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
 .header_nav {
   display: flex;
 }
 
+.header__item {
+  padding-left: 30px;
+  color: #000;
+}
+
+.header__item:first-child {
+  padding-left: 0px;
+}
+
 .logo {
   cursor: pointer;
+  width: 95px;
+  height: 75px;
 }
 
 .header__item {
   padding-left: 30px;
+
   color: #000;
 }
 

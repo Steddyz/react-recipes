@@ -4,14 +4,6 @@
   justify-content: space-between;
 }
 
-hr {
-  margin: 50px 0px 50px 0px;
-  width: 160%;
-  height: 1px;
-
-  border: none;
-}
-
 .recipe_title {
   margin-bottom: 30px;
 }
