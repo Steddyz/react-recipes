@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import cl from "./RecipeCard.module.css";
 import { useNavigate } from "react-router-dom";
 
-const RecipeCard = () => {
+const RecipeCard = ({ filter }) => {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -25,13 +25,20 @@ const RecipeCard = () => {
     };
     allRecipes();
   }, []);
+
+  const filteredRecipes = recipes.filter(
+    (recipe) =>
+      recipe.strMeal &&
+      recipe.strMeal.toLowerCase().includes(filter.toLowerCase())
+  );
+
   return (
     <>
       {loading ? (
         <div className={cl.loading}>Загрузка...</div>
       ) : (
         <div className={cl.wrapper_recipe}>
-          {recipes.map((recipe) => (
+          {filteredRecipes.map((recipe) => (
             <div
               onClick={() => handleRecipeClick(recipe)}
               className={cl.recipe_inner}

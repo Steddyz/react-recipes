@@ -5,6 +5,7 @@ import cl from "./RecipePage.module.css";
 
 const RecipePage = () => {
   const location = useLocation();
+
   const recipe = location.state;
 
   if (!recipe) {
@@ -33,13 +34,11 @@ const RecipePage = () => {
             alt={recipe.strMeal}
           />
           <div className={cl.options}>
-            <p className={cl.recipe_countrie}>Страна: {recipe.strArea}</p>
-            <p className={cl.recipe_category}>
-              Категория: {recipe.strCategory}
-            </p>
+            <p className={cl.recipe_countrie}>{recipe.strArea}</p>
+            <p className={cl.recipe_category}>{recipe.strCategory}</p>
           </div>
         </div>
-        <hr />
+        <hr className={cl.hr} />
 
         <div className={cl.ingredients_wrapper}>
           <h2 className={cl.ingredient_title}>Ингредиенты</h2>

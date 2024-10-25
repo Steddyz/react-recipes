@@ -2,8 +2,12 @@ import React from "react";
 
 import cl from "./Button.module.css";
 
-const Button = ({ value }) => {
-  return <button className={cl.button}>{value}</button>;
+const Button = ({ value, onClick }) => {
+  return (
+    <button onClick={onClick} className={cl.button}>
+      {value}
+    </button>
+  );
 };
 
 export default Button;
