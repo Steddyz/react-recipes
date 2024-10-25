@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import cl from "./MealsByCategory.module.css";
+import SearchForm from "../SearchForm/SearchForm";
 
 const MealsByCategory = () => {
   const { categoryName } = useParams();
@@ -38,6 +39,8 @@ const MealsByCategory = () => {
   return (
     <>
       <h2 className={cl.title}>Блюда категории {categoryName}</h2>
+      <SearchForm />
+
       {loading ? (
         <div className={cl.loading}>Loading...</div>
       ) : (
