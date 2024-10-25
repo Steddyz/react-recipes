@@ -12,18 +12,24 @@
   margin-bottom: 20px;
 }
 
+.random_inner {
+  cursor: pointer;
+}
+
 .random_dish {
   display: flex;
   width: 400px;
   height: 400px;
   border: 1px solid #000;
   border-radius: 4px;
+
   box-shadow: 2px 2px 35px 8px rgba(34, 60, 80, 0.2);
 }
 
 .wapper_inner {
   color: #636363;
   display: flex;
+
   justify-content: space-between;
   padding: 5px;
 }

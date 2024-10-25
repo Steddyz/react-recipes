@@ -2,9 +2,16 @@ import React, { useEffect, useState } from "react";
 
 import cl from "./RandomRecipe.module.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const RandomRecipe = () => {
   const [recipe, setRecipe] = useState(null);
+
+  const navigate = useNavigate();
+
+  const handleRecipeClick = (recipe) => {
+    navigate(`/recipes/${recipe.idMeal}`, { state: recipe });
+  };
 
   useEffect(() => {
     const getRandomRecipe = async () => {
@@ -21,7 +28,10 @@ const RandomRecipe = () => {
       <div className={cl.random_wrapper}>
         <div className={cl.wrapper_title}>Случайный рецепт</div>
         {recipe ? (
-          <div>
+          <div
+            className={cl.random_inner}
+            onClick={() => handleRecipeClick(recipe)}
+          >
             <img
               src={recipe.strMealThumb}
               alt="randomRecipe"
