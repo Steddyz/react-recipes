@@ -10,8 +10,13 @@ const MealsByCategory = () => {
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedMeal, setSelectedMeal] = useState(null);
+  const [filter, setFilter] = useState("");
 
   const navigate = useNavigate();
+
+  const handleSearch = (symbol) => {
+    setFilter(symbol.trim());
+  };
 
   const handleRecipeClick = async (meal) => {
     try {
@@ -31,21 +36,25 @@ const MealsByCategory = () => {
         `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`
       );
       setLoading(false);
-      setMeals(response.data.meals);
+      setMeals(response.data.meals || []);
     };
     mealsByCategory();
   }, [categoryName]);
 
+  const filteredMeals = meals.filter((meal) =>
+    meal.strMeal.toLowerCase().includes(filter.toLowerCase())
+  );
+
   return (
     <>
       <h2 className={cl.title}>Блюда категории {categoryName}</h2>
-      <SearchForm />
+      <SearchForm onSearch={handleSearch} />
 
       {loading ? (
         <div className={cl.loading}>Loading...</div>
       ) : (
         <div className={cl.wrapper_meal}>
-          {meals.map((meal) => (
+          {filteredMeals.map((meal) => (
             <div
               key={meal.idMeal}
               onClick={() => handleRecipeClick(meal)}
