@@ -10,8 +10,13 @@ const MealsByCountry = () => {
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedMeal, setSelectedMeal] = useState(null);
+  const [filter, setFilter] = useState("");
 
   const navigate = useNavigate();
+
+  const handleSearch = (symbol) => {
+    setFilter(symbol.trim());
+  };
 
   const handleRecipeClick = async (meal) => {
     try {
@@ -27,24 +32,29 @@ const MealsByCountry = () => {
 
   useEffect(() => {
     const mealsByCountrie = async () => {
+      setLoading(true);
       const response = await axios.get(
         `https://www.themealdb.com/api/json/v1/1/filter.php?a=${countrieName}`
       );
       setLoading(false);
-      setMeals(response.data.meals);
+      setMeals(response.data.meals || []);
     };
     mealsByCountrie();
   }, [countrieName]);
 
+  const filteredMeals = meals.filter((meal) =>
+    meal.strMeal.toLowerCase().includes(filter.toLowerCase())
+  );
+
   return (
     <>
       <h2 className={cl.title}>Блюда из {countrieName}</h2>
-      <SearchForm />
+      <SearchForm onSearch={handleSearch} />
       {loading ? (
         <div className={cl.loading}>Loading...</div>
       ) : (
         <div className={cl.wrapper_countrie}>
-          {meals.map((meal) => (
+          {filteredMeals.map((meal) => (
             <div
               onClick={() => handleRecipeClick(meal)}
               className={cl.countrie_inner}
