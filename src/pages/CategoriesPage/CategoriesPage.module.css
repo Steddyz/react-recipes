@@ -25,6 +25,12 @@
   cursor: pointer;
 
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+  transition: all 0.2s ease-in;
+}
+
+.category_wrapper:hover {
+  background-color: rgba(250, 194, 194, 0.5);
 }
 
 .category_title {
@@ -32,4 +38,6 @@
   justify-content: end;
   padding-right: 20px;
   color: #a1a1a1;
+
+  transition: all 0.2s ease-in;
 }

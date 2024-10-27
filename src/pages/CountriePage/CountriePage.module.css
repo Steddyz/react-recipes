@@ -24,6 +24,12 @@
   border: 1px solid #000;
   border-radius: 5px;
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+  transition: all 0.2s ease-in;
+}
+
+.flag_image:hover {
+  box-shadow: 4px 4px 8px 2px rgba(34, 60, 80, 0.6);
 }
 
 .countrie_name {

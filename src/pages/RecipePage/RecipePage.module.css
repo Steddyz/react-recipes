@@ -18,9 +18,11 @@
 }
 
 .recipe_image {
-  height: 650px;
-  width: 650px;
+  height: 600px;
+  width: 600px;
   border-radius: 5px;
+
+  border: 1px solid #a19f9f;
 }
 
 .instruction_title {
@@ -29,7 +31,7 @@
 
 .options_wrapper {
   justify-content: center;
-  width: 650px;
+  width: 600px;
 }
 
 .options {
