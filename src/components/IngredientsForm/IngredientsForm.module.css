@@ -111,3 +111,59 @@ hr {
 .description {
   color: #a1a1a1;
 }
+
+@media (max-width: 1440px) {
+  .ingredients_title {
+    width: 1100px;
+    height: 1000px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ingredients_title {
+    display: flex;
+    transform: skewX(0deg);
+  }
+
+  .ingredients_form {
+    width: 600px;
+  }
+
+  .form_input {
+    width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ingredients_title {
+    width: 500px;
+    height: 700px;
+  }
+
+  .ingredients_form {
+    width: 600px;
+  }
+
+  .form_input {
+    width: 400px;
+  }
+
+  hr {
+    width: 200px;
+  }
+
+  .ingredients_form {
+    width: 400px;
+  }
+
+  .form_input {
+    width: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .ingredients_title {
+    width: 400px;
+    height: 700px;
+  }
+}
