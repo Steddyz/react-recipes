@@ -5,7 +5,6 @@
 
   transform: skewX(-15deg);
   padding: 20px;
-  top: -100px;
   width: 98%;
   height: 1000px;
 
@@ -138,13 +137,21 @@ hr {
   .ingredients_title {
     width: 500px;
     height: 700px;
+    width: 90%;
+  }
+
+  .title {
+    transform: skewX(0deg);
   }
 
   .ingredients_form {
     width: 600px;
+    transform: skewX(0deg);
+    width: 90%;
   }
 
   .form_input {
+    width: 90%;
     width: 400px;
   }
 
@@ -165,5 +172,19 @@ hr {
   .ingredients_title {
     width: 400px;
     height: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ingredients_title {
+    width: 90%;
+  }
+
+  .ingredients_form {
+    width: 90%;
+  }
+
+  .form_input {
+    width: 90%;
   }
 }
