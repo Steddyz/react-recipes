@@ -65,3 +65,47 @@
   white-space: pre-line;
   text-align: left;
 }
+
+@media (max-width: 1024px) {
+  .recipe {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .recipe_wrapper,
+  .instruction {
+    width: 100%;
+    margin: 0;
+  }
+
+  .recipe_image {
+    height: auto;
+    width: 100%;
+  }
+
+  .options_wrapper {
+    width: 100%;
+  }
+
+  .ingredients_wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .recipe_title {
+    font-size: 24px;
+  }
+
+  .instruction_title {
+    font-size: 20px;
+  }
+
+  .ingredients_item {
+    font-size: 14px;
+  }
+
+  .recipe_instruction {
+    font-size: 14px;
+  }
+}

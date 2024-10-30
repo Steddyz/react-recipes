@@ -53,8 +53,6 @@ const RecipeCard = ({ filter }) => {
                 <p>{recipe.strMeal}</p>
                 <p>{recipe.strArea}</p>
               </div>
-
-              {/* <p>{recipe.strInstructions}</p> */}
             </div>
           ))}
         </div>
