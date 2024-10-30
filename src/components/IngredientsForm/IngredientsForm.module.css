@@ -8,6 +8,8 @@
   width: 98%;
   height: 1000px;
 
+  margin: 0 auto;
+
   background-color: #f1f1f1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
