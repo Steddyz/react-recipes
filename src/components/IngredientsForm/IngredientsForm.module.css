@@ -6,11 +6,13 @@
   transform: skewX(-15deg);
   padding: 20px;
   width: 98%;
-  height: 1000px;
+  min-height: 100vh;
 
   margin: 0 auto;
+  margin-bottom: 200px;
 
-  background-color: #f1f1f1;
+  overflow: auto;
+  background-color: transparent;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -76,6 +78,7 @@ hr {
 
 .recipes_wrapper {
   display: flex;
+  flex-direction: column;
 }
 
 .recipes_inner {
@@ -83,6 +86,8 @@ hr {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+
+  margin-bottom: 20px;
 }
 
 .recipes_item {
@@ -137,9 +142,15 @@ hr {
 
 @media (max-width: 768px) {
   .ingredients_title {
-    width: 500px;
+    width: 400px;
     height: 700px;
     width: 90%;
+
+    background-color: #f5f5dc;
+  }
+
+  .recipes_wrapper {
+    margin-bottom: 80px;
   }
 
   .title {
@@ -172,7 +183,7 @@ hr {
 
 @media (max-width: 500px) {
   .ingredients_title {
-    width: 400px;
+    width: 300px;
     height: 700px;
   }
 }

@@ -36,6 +36,7 @@
 
 @media (max-width: 768px) {
   .random_dish {
+    margin: 0 auto;
     width: 300px;
     height: 300px;
   }
